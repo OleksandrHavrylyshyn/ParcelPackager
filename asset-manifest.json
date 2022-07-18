@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.ad250ce7.js",
-    "index.html": "/index.html",
-    "main.ad250ce7.js.map": "/static/js/main.ad250ce7.js.map"
+    "main.js": "/ParcelPackager/static/js/main.ad250ce7.js",
+    "index.html": "/ParcelPackager/index.html",
+    "main.ad250ce7.js.map": "/ParcelPackager/static/js/main.ad250ce7.js.map"
   },
   "entrypoints": [
     "static/js/main.ad250ce7.js"
