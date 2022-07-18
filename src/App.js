@@ -69,8 +69,7 @@ function App() {
     }
     if (input.date === undefined || input.date === "") {
       formIsValid = false;
-      errors.dateValidation =
-        "Please select date of dispatch.";
+      errors.dateValidation = "Please select date of dispatch.";
     }
 
     setErrors(errors);
@@ -102,136 +101,142 @@ function App() {
   return (
     <div className="App">
       <h3 className="p-2 px-5 mb-2 bg-secondary text-white">ParcelPackager</h3>
-      <Form className="container card my-4 w-50 p-3 ">
-        <h4 className="card-title text-center">
-          {isVisible ? "Edit parcel" : "Add parcel"}
-        </h4>
-        <Form.Group className="mb-2 w-50" controlId="formSenterSelect">
-          <Form.Label className="mx-2">Sent from</Form.Label>
-          <Form.Select
-            value={input.senterCity}
-            defaultValue={"default"}
-            onChange={(e) => setInput({ ...input, senterCity: e.target.value })}
-          >
-            <option disabled hidden value={"default"}>
-              Select city
-            </option>
-            {citiesInput.map((city, index) => {
-              return (
-                <option key={index} value={city}>
-                  {city}
-                </option>
-              );
-            })}
-          </Form.Select>
-          <Form.Text className="mx-2 text-danger">
-            {errors.senterValidation}
-          </Form.Text>
-        </Form.Group>
+      <div id="form" className="container">
+        <Form className="mx-auto card col-12 col-sm-6 my-4 p-3 ">
+          <h4 className="card-title text-center">
+            {isVisible ? "Edit parcel" : "Add parcel"}
+          </h4>
+          <Form.Group className="mb-2 w-50" controlId="formSenterSelect">
+            <Form.Label className="mx-2">Sent from</Form.Label>
+            <Form.Select
+              value={input.senterCity}
+              defaultValue={"default"}
+              onChange={(e) =>
+                setInput({ ...input, senterCity: e.target.value })
+              }
+            >
+              <option disabled hidden value={"default"}>
+                Select city
+              </option>
+              {citiesInput.map((city, index) => {
+                return (
+                  <option key={index} value={city}>
+                    {city}
+                  </option>
+                );
+              })}
+            </Form.Select>
+            <Form.Text className="mx-2 text-danger">
+              {errors.senterValidation}
+            </Form.Text>
+          </Form.Group>
 
-        <Form.Group className="mb-2 w-50" controlId="formRecipientSelect">
-          <Form.Label className="mx-2">Sent to</Form.Label>
-          <Form.Select
-            value={input.recipientCity}
-            defaultValue={"default"}
-            onChange={(e) =>
-              setInput({ ...input, recipientCity: e.target.value })
-            }
-          >
-            <option disabled hidden value={"default"}>
-              Select city
-            </option>
-            {citiesInput.map((city, index) => {
-              return (
-                <option key={index} value={city}>
-                  {city}
-                </option>
-              );
-            })}
-          </Form.Select>
-          <Form.Text className="mx-2 text-danger">
-            {errors.recipientValidation}
-            {errors.cityValidation}
-          </Form.Text>
-        </Form.Group>
+          <Form.Group className="mb-2 w-50" controlId="formRecipientSelect">
+            <Form.Label className="mx-2">Sent to</Form.Label>
+            <Form.Select
+              value={input.recipientCity}
+              defaultValue={"default"}
+              onChange={(e) =>
+                setInput({ ...input, recipientCity: e.target.value })
+              }
+            >
+              <option disabled hidden value={"default"}>
+                Select city
+              </option>
+              {citiesInput.map((city, index) => {
+                return (
+                  <option key={index} value={city}>
+                    {city}
+                  </option>
+                );
+              })}
+            </Form.Select>
+            <Form.Text className="mx-2 text-danger">
+              {errors.recipientValidation}
+              {errors.cityValidation}
+            </Form.Text>
+          </Form.Group>
 
-        <Form.Group className="mb-2 w-50" controlId="formTypeSelect">
-          <Form.Label className="mx-2">Type</Form.Label>
-          <Form.Select
-            value={input.type}
-            defaultValue={"default"}
-            onChange={(e) => setInput({ ...input, type: e.target.value })}
-          >
-            <option disabled hidden value={"default"}>
-              Select type
-            </option>
-            <option value="Gadgets">Gadgets</option>
-            <option value="Drinks">Drinks</option>
-            <option value="Clothes">Clothes</option>
-            <option value="Medicine">Medicine</option>
-            <option value="Other">Other</option>
-          </Form.Select>
-          <Form.Text className="mx-2 text-danger">{errors.typeValidation}</Form.Text>
-        </Form.Group>
+          <Form.Group className="mb-2 w-50" controlId="formTypeSelect">
+            <Form.Label className="mx-2">Type</Form.Label>
+            <Form.Select
+              value={input.type}
+              defaultValue={"default"}
+              onChange={(e) => setInput({ ...input, type: e.target.value })}
+            >
+              <option disabled hidden value={"default"}>
+                Select type
+              </option>
+              <option value="Gadgets">Gadgets</option>
+              <option value="Drinks">Drinks</option>
+              <option value="Clothes">Clothes</option>
+              <option value="Medicine">Medicine</option>
+              <option value="Other">Other</option>
+            </Form.Select>
+            <Form.Text className="mx-2 text-danger">
+              {errors.typeValidation}
+            </Form.Text>
+          </Form.Group>
 
-        <Form.Group className="mb-2 w-50" controlId="formDateControl">
-          <Form.Label className="mx-2">Date of dispatch</Form.Label>
-          <Form.Control
-            type="date"
-            value={input.date}
-            onChange={(e) => setInput({ ...input, date: e.target.value })}
-          />
-          <Form.Text className="mx-2 text-danger">
-            {errors.dateValidation}
-          </Form.Text>
-        </Form.Group>
+          <Form.Group className="mb-2 w-50" controlId="formDateControl">
+            <Form.Label className="mx-2">Date of dispatch</Form.Label>
+            <Form.Control
+              type="date"
+              value={input.date}
+              onChange={(e) => setInput({ ...input, date: e.target.value })}
+            />
+            <Form.Text className="mx-2 text-danger">
+              {errors.dateValidation}
+            </Form.Text>
+          </Form.Group>
 
-        <Form.Group className="mb-2" controlId="formDescriptionControl">
-          <Form.Label className="mx-2">Description</Form.Label>
-          <Form.Control
-            type="text"
-            value={input.description}
-            onChange={(e) =>
-              setInput({ ...input, description: e.target.value })
-            }
-            placeholder="Description"
-          />
-          <Form.Text className="mx-2 text-danger">
-            {errors.descriptionValidation}
-          </Form.Text>
-        </Form.Group>
+          <Form.Group className="mb-2" controlId="formDescriptionControl">
+            <Form.Label className="mx-2">Description</Form.Label>
+            <Form.Control
+              type="text"
+              value={input.description}
+              onChange={(e) =>
+                setInput({ ...input, description: e.target.value })
+              }
+              placeholder="Description"
+            />
+            <Form.Text className="mx-2 text-danger">
+              {errors.descriptionValidation}
+            </Form.Text>
+          </Form.Group>
 
-        {isVisible ? (
-          <div className="row w-75 mx-auto">
-            <Button variant="secondary col mx-1" onClick={handleClose}>
-              Close
-            </Button>
+          {isVisible ? (
+            <div className="row w-75 mx-auto">
+              <Button variant="secondary col mx-1" onClick={handleClose}>
+                Close
+              </Button>
+              <Button
+                variant="danger col mx-1"
+                onClick={() => {
+                  handleDelete(input.id);
+                }}
+              >
+                Delete Parcel
+              </Button>
+              <Button variant="primary col mx-1" onClick={handleEdit}>
+                Save Changes
+              </Button>
+            </div>
+          ) : (
             <Button
-              variant="danger col mx-1"
-              onClick={() => {
-                handleDelete(input.id);
+              className="w-50 my-2 mx-auto"
+              variant="info text-white"
+              type="submit"
+              onClick={(e) => {
+                e.preventDefault();
+                handleSubmit();
               }}
             >
-              Delete Parcel
+              Submit
             </Button>
-            <Button variant="primary col mx-1" onClick={handleEdit}>
-              Save Changes
-            </Button>
-          </div>
-        ) : (
-          <Button
-            className="w-50 my-2 mx-auto"
-            variant="info text-white"
-            type="submit"
-            onClick={(e) => {
-              e.preventDefault();
-              handleSubmit();
-            }}
-          >
-            Submit
-          </Button>
-        )}
-      </Form>
+          )}
+        </Form>
+      </div>
       <div className="container">
         <h4>Parcel List</h4>
         <Table responsive striped bordered hover>

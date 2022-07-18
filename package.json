@@ -2,7 +2,7 @@
   "name": "parcel-control",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://oleksandrhavrylyshyn.github.io/",
+  "homepage": "https://oleksandrhavrylyshyn.github.io/ParcelPackager/",
   "dependencies": {
     "gh-pages": "^4.0.0",
     "@reduxjs/toolkit": "^1.8.3",
