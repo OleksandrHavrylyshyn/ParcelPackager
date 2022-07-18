@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/ParcelPackager/static/js/main.ad250ce7.js",
+    "main.js": "/ParcelPackager/static/js/main.b9f86418.js",
     "index.html": "/ParcelPackager/index.html",
-    "main.ad250ce7.js.map": "/ParcelPackager/static/js/main.ad250ce7.js.map"
+    "main.b9f86418.js.map": "/ParcelPackager/static/js/main.b9f86418.js.map"
   },
   "entrypoints": [
-    "static/js/main.ad250ce7.js"
+    "static/js/main.b9f86418.js"
   ]
 }
